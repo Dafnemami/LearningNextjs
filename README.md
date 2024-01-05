@@ -16,6 +16,8 @@ npm run dev
 
   npm start
     Runs the built app in production mode.
+    
+  en general "npm run ..." y la palabra q dejo en sección "script" de package.json
 
 
 - projecto usa TScript (.ts, .tsx), Tailwind (usado en DSI?) y Prisma (en DSI no ocupan Prisma)
@@ -36,3 +38,25 @@ npm run dev
 - creo q react server component es solo un .ts
 
 - funciones luego tratadas como tags??
+
+- Static rendering is useful for UI with no data or data that is shared across users. En caso contrario, usamos Dynamic rendering.
+
+
+you made your dashboard page dynamic, however, we discussed how the slow data fetches can impact the performance of your application. **!Streaming!** is a data transfer technique that allows you to break down a route into smaller "chunks" and progressively stream them from the server to the client as they become ready.
+
+chunks de diferentes requests are rendered in parallel, reducing the overall load time
+
+- ´loading.tsx´ para agregar una interfaz mientras carga la página web. aplica sobre rutas hijas hasta encontrar otro loading.tsx
+
+import DashboardSkeleton from '@/app/ui/skeletons';
+ 
+export default function Loading() {
+  return <DashboardSkeleton />;
+}
+
+
+-     The user doesn't have to wait for the page to finish loading before navigating away (this is called interruptable navigation) over the static compents placed along with the page
+
+-Route groups allow you to organize files into logical groups without affecting the URL path structure. When you create a new folder using parentheses (), the name won't be included in the URL path. So /dashboard/(overview)/page.tsx becomes /dashboard.
+
+
